@@ -12,7 +12,7 @@ type ScrollPickerProps = {
   marginVerticalItem?: number;
   items: Item[];
   selectedItem: Item;
-  changeHandler: (value: string) => void;
+  changeHandler: (value: any) => void;
 };
 
 export const ScrollPicker = memo<ScrollPickerProps>(

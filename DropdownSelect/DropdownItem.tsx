@@ -5,21 +5,20 @@ import { CheckMarkIcon } from '../icons/CheckMarkIcon';
 import { If } from '../atoms/If';
 
 type DropdownItemProps = {
+  textColor: string;
   isActive: boolean;
   icon: React.ReactNode;
   children: React.ReactNode;
   onPress: () => void;
 };
 
-export const DropdownItem = React.memo<DropdownItemProps>(({ onPress, isActive, children, icon }) => {
-  const { colors } = useTheme();
-
+export const DropdownItem = React.memo<DropdownItemProps>(({ onPress, isActive, children, icon, textColor }) => {
   return (
     <Menu.Item>
       <Pressable style={styles.mainBox} onPress={onPress}>
         <Box style={styles.leftBadge}>{icon}</Box>
         <Box style={styles.titleDropdown}>
-          <NativeText style={{ color: colors.text }}>{children}</NativeText>
+          <NativeText style={{ color: textColor }}>{children}</NativeText>
         </Box>
         <Box>
           <If is={isActive}>
